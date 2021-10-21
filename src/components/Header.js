@@ -8,8 +8,8 @@ function Header() {
         <Link to= "/">Swimmer's Routine</Link>
       </h1>
       <div className="menu">
-       <Link to= "/">Add routine</Link>
-       <Link to= "/">Add Days</Link>
+       <button type="button">Add Routine</button>
+       <button type="button">Add Days</button>
       </div>
     </div>
   )
