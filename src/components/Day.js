@@ -1,33 +1,59 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import Routine from "./Routine"
+import styled from "styled-components";
+import useFetch from "../hooks/useFetch";
+import Word from "./Word"
 
 function Day() {
   const {day} = useParams();
-  const {routine, setRoutine} = useState([]);
+  const words = useFetch(`http://localhost:3001/words?day=${day}`);
+  // const {routine, setRoutine} = useState([]);
 
-  useEffect(() => {
-    fetch(`http://localhost:3004/routines?day=${day}`)
-    .then(res => {
-      return res.json()
-    })
-    .then(data => {
-      setRoutine(data)
-    })
-  }, [day])
+  // useEffect(() => {
+  //   fetch(`http://localhost:3001/routine?day=${day}`)
+  //   .then(res => {
+  //     return res.json()
+  //   })
+  //   .then(data => {
+  //     setRoutine(data)
+  //   })
+  // }, [day])
   
   return (
     <>
     <h2>Day {day}</h2>
-    <table>
+    {words.length === 0 && <span>Loading...</span>}
+    <DayTable>
       <tbody>
-        {routine.map(routine => (
-          <Routine routine={routine} key ={routine.id} />
+        {words&&words.map(word => (
+          <Word word={word} key ={word.id} />
         ))}
       </tbody>
-    </table>
+    </DayTable>
     </>
   );
 }  
+
+const DayTable = styled.div`
+  border-collapse: collapse;
+  width: 100%;
+
+  td {
+    width: 25%;
+    height: 70px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 26px;
+  }
+
+  td:first-child {
+    width: 10%;
+  }
+
+  .off td {
+    background: #eee;
+    color: #ccc;
+  }
+`;
 
 export default Day;
