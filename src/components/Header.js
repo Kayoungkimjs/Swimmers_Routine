@@ -18,6 +18,7 @@ function Header() {
 
 const HeaderGroup = styled.div`
   positon: relative;
+  padding: 20px;
 
   .menu {
     position: absolute;
@@ -26,12 +27,12 @@ const HeaderGroup = styled.div`
   }
 
   .link {
-    border: 1px solid #333;
+    border: none;
     padding: 10px;
     margin-left: 10px;
     background-color: #efefef;
     font-weight: bold;
-    border-radius: 4px;
+    border-radius: 8px;
   }
 `;
 

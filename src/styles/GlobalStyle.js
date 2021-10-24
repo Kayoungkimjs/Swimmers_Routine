@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import assets from './assets/background_1.png'
-// import reset from "styled-reset";
+import background from "./assets/background_4.jpg"
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -11,7 +10,8 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 20px;
-    background: url(${assets});
+    background-image: url(${background});
+    background-repeat: no-repeat;
     background-size: cover;
   }
   
@@ -23,8 +23,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-      monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   }
   
   a {
@@ -32,9 +31,21 @@ const GlobalStyle = createGlobalStyle`
     color: #333;
   }
 
-  .App {
-    width: 800px;
-    margin: 0 auto;
+  button {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    border: 0 none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: dodgerblue;
+  }
+
+  .off {
+    background: #eee;
+    color: #ccc;
   }
   `;
 

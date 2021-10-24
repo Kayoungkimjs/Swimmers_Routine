@@ -5,11 +5,13 @@ import Header from "./components/Header";
 import CreateRoutine from "./components/CreateRoutine";
 import CreateDay from "./components/CreateDay";
 import Empty from "./components/Empty";
+import styled from "styled-components"
+
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      <AppContainer>
         <Header />
         <Switch>
           <Route exact path="/">
@@ -28,9 +30,15 @@ function App() {
             <Empty />
           </Route>
         </Switch>
-      </div>
+      </AppContainer>
     </BrowserRouter>
   );
 }
+
+const AppContainer = styled.div`
+  width: 800px;
+  margin: 0 auto;
+  
+`;
 
 export default App;
