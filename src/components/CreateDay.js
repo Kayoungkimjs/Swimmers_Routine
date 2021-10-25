@@ -3,11 +3,11 @@ import { useHistory } from 'react-router';
 import useFetch from "../hooks/useFetch";
 
 function CreateDay() {
-  const days = useFetch("http://localhost:3001/days");
+  const days = useFetch("http://localhost:3000/days");
   const history = useHistory();
 
   function addDay() {
-    fetch(`http://localhost:3001/days/`, {
+    fetch("http://localhost:3000/days/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,8 +24,8 @@ function CreateDay() {
   }
   return(
     <div>
-      <h3>현재 일수 : {days.length}일</h3>
-      <button onClick={addDay}>Day 추가</button>
+      <h3>{days.length} swimming day is recording..</h3>
+      <button onClick={addDay}>+ Day</button>
     </div>
   );
 }

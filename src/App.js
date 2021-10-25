@@ -1,3 +1,4 @@
+import React from "react"
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Day from "./components/Day";
 import DayList from "./components/DayList";
@@ -37,8 +38,7 @@ function App() {
 
 const AppContainer = styled.div`
   width: 800px;
-  margin: 0 auto;
-  
+  margin: 0 auto;  
 `;
 
 export default App;

@@ -1,7 +1,20 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 
-function Routine({routine:r}) {
+// interface IProps {
+//   routine: IRoutine;
+// }
+
+// export interface IRoutine {
+//   id: number;
+//   day: number;
+//   stroke: string;
+//   distance: number;
+//   lap: number;
+//   isDone: boolean;
+// }
+
+function Routine({routine: r}) {
   const [routine, setRoutine] = useState(r)
   const [isToggle, setIsToggle] = useState(false);
   const [isDone, setIsDone] = useState(routine.isDone);
@@ -29,7 +42,7 @@ function Routine({routine:r}) {
 
   function handleDelete() {
     if (window.confirm("삭제 하시겠습니까?")) {
-      fetch(`http://localhost:3001/routines/${routine.id}`, {
+      fetch(`http://localhost:3000/routines/${routine.id}`, {
         method: "DELETE",
       }).then(res => {
         if (res.ok) {
@@ -55,7 +68,7 @@ if (routine.id === 0) {
       <TableData>{routine.distance}m x {routine.lap}회</TableData>
       <TableData>{isToggle && `총 ${routine.distance * routine.lap}m`} </TableData>
       <TableData>
-        <button onClick={handleToggle}>뜻 {isToggle ? '숨기기' : '보기'}</button>
+        <button onClick={handleToggle}>거리 {isToggle ? '숨기기' : '보기'}</button>
         <button className="btn_del" onClick={handleDelete}>삭제</button>
       </TableData>
     </tr>
@@ -64,10 +77,10 @@ if (routine.id === 0) {
 
 const TableData = styled.td`
   width: 15%;
-  height: 70px;
+  height: 60px;
   border: 1px solid #ccc;
   text-align: center;
-  font-size: 26px;
+  font-size: 22px;
   
   &:first-child {
     width: 10%;
@@ -80,7 +93,7 @@ const TableData = styled.td`
   .btn_del {
     margin-left: 10px;
     color: #fff;
-    background-color: firebrick;
+    background-color: #F86D7D;
   }
 `;
 

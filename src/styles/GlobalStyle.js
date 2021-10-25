@@ -34,17 +34,22 @@ const GlobalStyle = createGlobalStyle`
   button {
     padding: 10px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 15px;
     cursor: pointer;
     border: 0 none;
     border-radius: 6px;
     padding: 10px 20px;
     color: #fff;
-    background-color: dodgerblue;
+    background-color: #3040C4;
+  }
+
+  select {
+    border: none;
+    border-radius: 10px;
   }
 
   .off {
-    background: #eee;
+    background: #ECF6FE;
     color: #ccc;
   }
   `;

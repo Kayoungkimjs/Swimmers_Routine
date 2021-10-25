@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Routine from "./Routine"
@@ -6,8 +6,8 @@ import styled from "styled-components";
 
 function Day() {
   const {day} = useParams();
-  const routines = useFetch(`http://localhost:3001/routines?day=${day}`);
-  
+  const routines  = useFetch(`http://localhost:3000/routines?day=${day}`);
+
   return (
     <>
     <h2>Day {day}</h2>
@@ -18,7 +18,7 @@ function Day() {
           <Routine routine={routine} key ={routine.id} />
         ))}
       </tbody>
-    </Table>
+    </Table>  
     </>
   );
 }  

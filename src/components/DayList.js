@@ -3,8 +3,14 @@ import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import styled from "styled-components";
 
+// export interface IDay {
+//   id: number;
+//   day: number;
+// }
+
 function DayList() {
-  const days = useFetch("http://localhost:3001/days")
+  const days = useFetch("http://localhost:3000/days")
+  
 
   if(days.length === 0) {
     return <span>Loading...</span>
@@ -43,7 +49,7 @@ const ListDay = styled.ul`
 
     &:hover {
     border: none;
-    background-color: #3DA5F5;
+    background-color: #3186C4;
     }
   `;  
   

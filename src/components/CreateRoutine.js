@@ -4,8 +4,10 @@ import useFetch from "../hooks/useFetch";
 import styled from "styled-components";
 
 function CreateRoutine() {
-  const days = useFetch("http://localhost:3001/days");
-  const routines = useFetch("http://localhost:3001/routines");
+  const days = useFetch("http://localhost:3000/days");
+  const strokes = useFetch("http://localhost:3000/strokes")
+  const distances =useFetch("http://localhost:3000/distances")
+  const laps =useFetch("http://localhost:3000/laps")
   
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
@@ -21,7 +23,7 @@ function CreateRoutine() {
       const distance = distanceRef.current.value;
       const lap = lapRef.current.value;
 
-      fetch(`http://localhost:3001/routines/`, {
+      fetch("http://localhost:3000/routines/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,10 +45,10 @@ function CreateRoutine() {
     }
   }
 
-  const strokeRef = useRef(null);
-  const distanceRef = useRef(null);
-  const dayRef = useRef(null);
-  const lapRef = useRef(null);
+  const strokeRef = useRef<HTMLSelectElement>(null);
+  const distanceRef = useRef<HTMLSelectElement>(null);
+  const dayRef = useRef<HTMLSelectElement>(null);
+  const lapRef = useRef<HTMLSelectElement>(null);
 
   return (
     <form onSubmit={onSubmit}>
@@ -63,19 +65,19 @@ function CreateRoutine() {
       <RoutineInput>
         <label>Stroke</label>
         <select ref={strokeRef}>
-          {routines.map(routine => (
-            <option key={routine.id} value={routine.stroke}>
-              {routine.stroke}
+          {strokes.map(stroke => (
+            <option key={stroke.id} value={stroke.stroke}>
+              {stroke.stroke}
             </option>
           ))}
         </select>
       </RoutineInput>
       <RoutineInput>
-        <label>Distance</label>
+        <label>Distance(m)</label>
         <select ref={distanceRef}>
-          {routines.map(routine => (
-            <option key={routine.id} value={routine.distance}>
-              {routine.distance}
+          {distances.map(distance => (
+            <option key={distance.id} value={distance.distance}>
+              {distance.distance}
             </option>
           ))}
         </select>
@@ -83,14 +85,13 @@ function CreateRoutine() {
       <RoutineInput>
         <label>Laps</label>
         <select ref={lapRef}>
-          {routines.map(routine => (
-            <option key={routine.id} value={routine.lap}>
-              {routine.lap}
+          {laps.map(lap => (
+            <option key={lap.id} value={lap.lap}>
+              {lap.lap}
             </option>
           ))}
         </select>
       </RoutineInput>
-      
       <button
         style={{
           opacity: isLoading ? 0.3 : 1,
