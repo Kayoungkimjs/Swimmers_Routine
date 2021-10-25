@@ -24,7 +24,7 @@ function Routine({routine: r}) {
   }
 
   function handleDone() {
-    fetch(`http://localhost:3001/routines/${routine.id}`, {
+    fetch(`http://localhost:3000/routines/${routine.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

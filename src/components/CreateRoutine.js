@@ -45,10 +45,10 @@ function CreateRoutine() {
     }
   }
 
-  const strokeRef = useRef<HTMLSelectElement>(null);
-  const distanceRef = useRef<HTMLSelectElement>(null);
-  const dayRef = useRef<HTMLSelectElement>(null);
-  const lapRef = useRef<HTMLSelectElement>(null);
+  const strokeRef = useRef(null);
+  const distanceRef = useRef(null);
+  const dayRef = useRef(null);
+  const lapRef = useRef(null);
 
   return (
     <form onSubmit={onSubmit}>
