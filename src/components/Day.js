@@ -3,10 +3,12 @@ import { useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Routine from "./Routine"
 import styled from "styled-components";
+import {API} from "../config";
+
 
 function Day() {
   const {day} = useParams();
-  const routines  = useFetch(`http://localhost:3000/routines?day=${day}`);
+  const routines  = useFetch(`${API.ROUTINES}?day=${day}`);
 
   return (
     <>

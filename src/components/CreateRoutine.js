@@ -1,13 +1,14 @@
 import React, { useRef, useState } from "react";
 import { useHistory } from "react-router";
+import {API} from "../config";
 import useFetch from "../hooks/useFetch";
 import styled from "styled-components";
 
 function CreateRoutine() {
-  const days = useFetch("http://localhost:3000/days");
-  const strokes = useFetch("http://localhost:3000/strokes")
-  const distances =useFetch("http://localhost:3000/distances")
-  const laps =useFetch("http://localhost:3000/laps")
+  const days = useFetch(`${API.DAYS}`);
+  const strokes = useFetch(`${API.STROKES}`)
+  const distances =useFetch(`${API.DISTANCES}`)
+  const laps =useFetch(`${API.LAPS}`)
   
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
@@ -23,7 +24,7 @@ function CreateRoutine() {
       const distance = distanceRef.current.value;
       const lap = lapRef.current.value;
 
-      fetch("http://localhost:3000/routines/", {
+      fetch(`${API.ROUTINES}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

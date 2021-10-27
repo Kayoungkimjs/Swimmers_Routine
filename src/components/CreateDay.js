@@ -1,13 +1,14 @@
 import React from 'react';
 import { useHistory } from 'react-router';
+import {API} from "../config";
 import useFetch from "../hooks/useFetch";
 
 function CreateDay() {
-  const days = useFetch("http://localhost:3000/days");
+  const days = useFetch(`${API.DAYS}`);
   const history = useHistory();
 
   function addDay() {
-    fetch("http://localhost:3000/days/", {
+    fetch(`${API.DAYS}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

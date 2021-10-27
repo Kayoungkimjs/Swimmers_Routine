@@ -1,10 +1,6 @@
 {
   "name": "awesome_routine",
   "version": "0.1.0",
-  "engines": {
-    "node": "14.x",
-    "npm": "7.x"
-  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -19,13 +15,12 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "node server",
-    "start:dev": "cross-env NODE_PATH=src react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "cross-env NODE_PATH=src npm run build"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
+  
   "eslintConfig": {
     "extends": [
       "react-app",

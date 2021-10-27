@@ -1,18 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-
-// interface IProps {
-//   routine: IRoutine;
-// }
-
-// export interface IRoutine {
-//   id: number;
-//   day: number;
-//   stroke: string;
-//   distance: number;
-//   lap: number;
-//   isDone: boolean;
-// }
+import {API} from "../config";
 
 function Routine({routine: r}) {
   const [routine, setRoutine] = useState(r)
@@ -24,7 +12,7 @@ function Routine({routine: r}) {
   }
 
   function handleDone() {
-    fetch(`http://localhost:3000/routines/${routine.id}`, {
+    fetch(`${API.ROUTINES}/${routine.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -42,7 +30,7 @@ function Routine({routine: r}) {
 
   function handleDelete() {
     if (window.confirm("삭제 하시겠습니까?")) {
-      fetch(`http://localhost:3000/routines/${routine.id}`, {
+      fetch(`${API.ROUTINES}/${routine.id}`, {
         method: "DELETE",
       }).then(res => {
         if (res.ok) {
