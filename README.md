@@ -1,6 +1,6 @@
 # Swimmer's Routine 🏊🏻
 ![UI](https://user-images.githubusercontent.com/83155239/139199114-350e7313-ade1-4107-8e9f-fa0ffe1cb756.gif)
-### Record your own swim routine! Stay calm and keep swimming! 
+### Keep calm and Swim on! Record your daily swim routine!
 ---
 ## ⚒ 주요 기술 스택 
 <img alt="JavaScript" src ="https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=white"/>   <img alt="ReactJS" src ="https://img.shields.io/badge/React-61DAFB.svg?&style=for-the-badge&logo=React&logoColor=white"/>   <img alt="ReactRouter" src ="https://img.shields.io/badge/React Router-CA4245.svg?&style=for-the-badge&logo=React Router&logoColor=white"/>   <img alt="styled-components" src ="https://img.shields.io/badge/styled-components-DB7093.svg?&style=for-the-badge&logo=styled-components&logoColor=white"/>   <img alt="JSON" src ="https://img.shields.io/badge/JSON-000000.svg?&style=for-the-badge&logo=JSON&logoColor=white"/>
